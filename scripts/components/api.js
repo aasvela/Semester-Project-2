@@ -1,0 +1,10 @@
+export const baseUrl = "https://api.noroff.dev/api/v1";
+export const routeRegister = "/auction/auth/register";
+export const routeLogin = "/auction/auth/login";
+export const routeAllListings = "/auction/listings";
+export const routeSingleListing = "/auction/listings/${id}";
+export const routeBids = "/auction/${id}/bids";
+export const routeMyListings = "/auction/listings/{user.name}";
+export const routeListings = "/auction/listings/";
+export const routeWhiskyListings = "/auction/listings/?_tag=whisky";
+export const routeProfile = "/auction/profiles/";

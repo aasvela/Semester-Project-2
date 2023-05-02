@@ -1,0 +1,132 @@
+.navbar {
+	border-bottom: 1px solid #ccc;
+	background-color: $color-2 !important;
+	// color: #000 !important;
+	.navbar-brand {
+		font-family: "Neue Haas Grotesk Display", sans-serif;
+		color: #fff !important;
+		font-size: 3rem;
+		font-weight: bold;
+	}
+
+	.navbar-nav {
+		li {
+			padding: 0.5rem;
+
+			a {
+				color: #fff;
+
+				&:hover {
+					text-decoration: none;
+					color: $color-1;
+				}
+			}
+			p {
+				color: #fff;
+			}
+
+			&.active {
+				background-color: #555;
+			}
+		}
+	}
+
+	.nav-item {
+		&.my-page-link {
+			display: none;
+
+			&.show {
+				display: block;
+			}
+		}
+
+		&.logout-btn {
+			display: none;
+			button {
+				border: solid transparent 1px;
+				border-radius: 1px;
+
+				background-color: transparent;
+				color: #fff;
+				padding: 0.2rem;
+				cursor: pointer;
+				&:hover {
+					border: solid rgb(255, 255, 255) 1px;
+				}
+			}
+		}
+	}
+}
+.nav-container {
+	max-width: 1665px;
+}
+
+// Media query for smaller screens
+@media (max-width: 991px) {
+	.navbar {
+		.navbar-nav {
+			flex-direction: column;
+			.nav-item {
+				&.my-page-link {
+					display: block;
+
+					&.show {
+						display: block;
+					}
+				}
+
+				&.logout-btn {
+					button {
+						width: 100%;
+						text-align: center;
+					}
+				}
+			}
+		}
+
+		.navbar-toggler {
+			margin-right: 0.5rem;
+		}
+	}
+
+	// .status-bar {
+	// 	display: none;
+	// }
+}
+.navbar-expand-lg {
+	flex-direction: column;
+}
+.navbar-collapse {
+	display: flex;
+	flex-direction: column;
+}
+.navbar-toggler {
+	border: solid transparent 1px;
+	background-color: transparent;
+	// color: #fff;
+	padding: 0.5rem;
+	cursor: pointer;
+	&:hover {
+		border: solid transparent 1px;
+		background-color: transparent;
+		color: #000;
+	}
+	&:focus {
+		background-color: transparent;
+		border: solid transparent 1px;
+	}
+}
+// .navbar-toggler {
+// 	border: none;
+// 	background-color: transparent;
+// 	color: #333; /* Change color to suit your design */
+// 	font-size: 1.5rem; /* Change font size to suit your design */
+// 	padding: 0.25rem 0.5rem; /* Change padding to suit your design */
+// }
+
+// /* Optional: Style the icon used for the toggler */
+// .navbar-toggler-icon {
+// 	background-image: url(""); /* Change to your icon URL */
+// 	width: 20px; /* Change width to suit your design */
+// 	height: 20px; /* Change height to suit your design */
+// }

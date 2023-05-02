@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title></title>
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<script
+			src="https://kit.fontawesome.com/5a172dbee7.js"
+			crossorigin="anonymous"
+		></script>
+		<link rel="stylesheet" href="css/styles.css" />
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+			crossorigin="anonymous"
+		/>
+	</head>
+	<body>
+		<div class="wrapper">
+			<header>
+				<nav class="navbar navbar-expand-lg">
+					<div class="container-fluid nav-container">
+						<a class="navbar-brand" id="logo" href="index.html">
+							<h1 class="logo">Golden glass</h1>
+						</a>
+						<button
+							class="navbar-toggler"
+							type="button"
+							data-bs-toggle="collapse"
+							data-bs-target="#navbarNav"
+							aria-controls="navbarNav"
+							aria-expanded="false"
+							aria-label="Toggle navigation"
+						>
+							<span
+								><i class="fa-solid fa-bars" style="color: #ffffff"></i
+							></span>
+						</button>
+						<div class="collapse navbar-collapse" id="navbarNav">
+							<ul class="navbar-nav">
+								<li class="nav-item home-link">
+									<a class="nav-link" href="index.html">Home</a>
+								</li>
+								<li class="nav-item listing-link">
+									<a class="nav-link active" href="listings.html">Auctions</a>
+								</li>
+								<li class="nav-item rules-link">
+									<a class="nav-link" href="rules.html">Rules</a>
+								</li>
+								<li class="nav-item about-link">
+									<a class="nav-link" href="about.html">About</a>
+								</li>
+								<li class="nav-item contact-link">
+									<a class="nav-link" href="contact.html">Contact</a>
+								</li>
+								<li class="nav-item login-link">
+									<a class="nav-link" href="login.html">Login</a>
+								</li>
+								<li class="nav-item register-link">
+									<a class="nav-link" href="register.html">Register</a>
+								</li>
+								<li class="nav-item my-page-link">
+									<a class="nav-link" id="my-page-link" href="my_page.html">
+										My page
+									</a>
+								</li>
+								<li class="nav-item logout-btn">
+									<button id="logout-btn">Log out</button>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</nav>
+			</header>
+			<main>
+				<div class="clock-container">
+					<p><time id="clock"></time></p>
+					<button
+						type="button"
+						data-bs-toggle="collapse"
+						data-bs-target="#collapseWidthExample"
+						aria-expanded="false"
+						aria-controls="collapseWidthExample"
+					>
+						Stats
+					</button>
+				</div>
+				<div class="status-container">
+					<div
+						class="status-bar collapse collapse-horizontal"
+						id="collapseWidthExample"
+					>
+						<div class="status-bar__inner-container">
+							<p>Available credits</p>
+							<p id="available-credits"></p>
+						</div>
+						<div class="status-bar__inner-container">
+							<a href="listings.html">
+								<p>Ongoing auctions: <span id="ongoing-auctions"></span></p>
+								<!-- <p id="ongoing-auctions"></p> -->
+							</a>
+						</div>
+						<div class="status-bar__inner-container">
+							<a href="my_page.html">
+								<p>Your auctions: <span id="list-my-auctions"></span></p>
+							</a>
+						</div>
+						<div class="status-bar__inner-container">
+							<p>Your bids</p>
+							<p id="user-bids"></p>
+						</div>
+						<div class="status-bar__inner-container user-profile">
+							<a href="my_page.html">
+								<p class="user__name"></p>
+							</a>
+
+							<a href="my_page.html">
+								<div class="user__avatar">
+									<img class="user__avatar-img" src="" alt="" />
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="container">
+					<h1>Listings</h1>
+					<div class="container"></div>
+					<div class="row">
+						<div class="col-md-2">
+							<div class="filter-container">
+								<h3>Country</h3>
+								<ul class="filter-list-country">
+									<li class="filter-list-country__item">
+										<input type="checkbox" /> Scotland
+									</li>
+									<li class="filter-list-country__item">
+										<input type="checkbox" /> Ireland
+									</li>
+									<li class="filter-list-country__item">
+										<input type="checkbox" /> Japan
+									</li>
+									<li class="filter-list-country__item">
+										<input type="checkbox" /> Sweden
+									</li>
+									<li class="filter-list-country__item">
+										<input type="checkbox" /> Norway
+									</li>
+								</ul>
+							</div>
+							<div class="filter-container">
+								<ul class="filter-list">
+									<li class="filter-list__item__my-auctions">
+										<input type="checkbox" /> My auctions
+									</li>
+									<li class="filter-list__item__exipred">
+										<input type="checkbox" /> Show expired
+									</li>
+								</ul>
+							</div>
+							<div class="filter-container">
+								<button
+									type="button"
+									data-bs-toggle="collapse"
+									data-bs-target="#collapse-form"
+									aria-expanded="false"
+									aria-controls="collapse-form"
+								>
+									Create a new listing
+								</button>
+							</div>
+						</div>
+						<div class="col-md-10 listing-list">
+							<div class="container">
+								<div class="collapse" id="collapse-form">
+									<div class="card-body">
+										<form id="new-listing-form">
+											<div class="form-group" id="create-listing-form">
+												<label for="brand-input" class="brand-label"
+													>Brand</label
+												>
+												<input
+													type="text"
+													class="form-control brand-input"
+													id="brand-input"
+													aria-describedby="brandHelp"
+												/>
+												<small id="brandHelp" class="form-text text-muted"
+													>Be precise with the spelling for better
+													matches.</small
+												>
+											</div>
+											<div class="form-group">
+												<label for="" class="product-label">Product</label>
+												<input
+													type="text"
+													class="form-control product-input"
+													id="product-input"
+												/>
+											</div>
+											<div class="form-group">
+												<label for="" class="age-label">Age</label>
+												<input
+													type="number"
+													class="form-control age-input"
+													id="age-input"
+												/>
+											</div>
+											<div class="form-group">
+												<label for="select-volume" class="volume-label"
+													>Volume</label
+												>
+												<select
+													class="form-control volume-select"
+													id="select-volume"
+												>
+													<option disabled selected>Select volume</option>
+													<option>500ml</option>
+													<option>700ml</option>
+													<option>1000ml</option>
+													<option>Other</option>
+												</select>
+											</div>
+											<div class="form-group">
+												<label
+													for="select-alcohol-volume"
+													class="alcohol-volume-label"
+													>Alcohol volume</label
+												>
+												<select
+													class="form-control alcohol-volume-select"
+													id="select-alcohol-volume"
+												>
+													<option disabled selected>
+														Select alcohol volume
+													</option>
+													<option>40%</option>
+													<option>50%</option>
+													<option>60%</option>
+													<option>Other</option>
+												</select>
+											</div>
+											<div class="form-group">
+												<label for="select-country" class="country-label"
+													>Country</label
+												>
+												<select
+													class="form-control country-select"
+													id="select-country"
+												>
+													<option disabled selected>Select a country</option>
+													<option>Scotland</option>
+													<option>Ireland</option>
+													<option>Japan</option>
+													<option>Sweden</option>
+													<option>Norway</option>
+												</select>
+											</div>
+											<div class="form-group">
+												<label
+													for="upload-product-image"
+													class="product-image-label"
+													>Upload product image</label
+												>
+												<input
+													type="url"
+													id="upload-product-image"
+													name="product-image"
+													class="form-control product-image-input"
+												/>
+											</div>
+											<div class="form-group">
+												<label
+													for="product-descripton-input"
+													class="product-description-label"
+													>Product description</label
+												>
+												<textarea
+													class="form-control product-description-input"
+													id="product-descripton-input"
+													rows="3"
+												></textarea>
+											</div>
+											<div class="form-group">
+												<label
+													for="auction-ends-input"
+													class="auction-ends-label"
+													>Auction ends at:</label
+												>
+												<input
+													type="datetime-local"
+													id="auction-ends-input"
+													class="form-control auction-ends-input"
+												/>
+											</div>
+											<button
+												type="submit"
+												class="create-listing-btn"
+												id="createListingBtn"
+											>
+												Submit
+											</button>
+										</form>
+									</div>
+								</div>
+							</div>
+							<ul class="list-group"></ul>
+						</div>
+					</div>
+				</div>
+			</main>
+		</div>
+		<footer>
+			<div>
+				<a href="https://twitter.com"><i class="fa fa-twitter"></i></a>
+				<a href="https://vimeo.com"><i class="fa fa-vimeo"></i></a>
+			</div>
+			<div class="copyright">Copyright 2020</div>
+			<div>
+				<a href="terms.html">Terms</a> |
+				<a href="policy.html">Privacy Policy</a>
+			</div>
+		</footer>
+		<script
+			src="scripts/auction/getItems.js"
+			type="module"
+			async
+			defer
+		></script>
+		<script src="scripts/script.js" type="module" async defer></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+			crossorigin="anonymous"
+		></script>
+	</body>
+</html>

@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Exo+2&family=Play&family=Red+Hat+Mono&display=swap");
+$primary: #1c1c1c;
+$dark: #262525;
+$navbar-dark-color: $dark;
+$navbar-dark-active-color: $primary;
+$primary-font: "Red Hat Mono", monospace;
+$logo-font: "Cinzel", serif;
+$background-colour: #393939;
+$primary-colour-hover: #f54b8d;
+$background-dark: rgba(0, 0, 0, 0.5);
+$card-bg: #1c1c1c;
+
+$color-1: #111618;
+$color-2: #223036;
+$color-3: #2f4f4f;
+$color-4: #4f3749;
+$color-5: #4c9c9c;
+$color-6: #ffd700;
+
+.container {
+	margin: 0 !important;
+}
+input[type="text"]:focus::placeholder {
+	color: transparent !important;
+}
+.active {
+	color: #fff !important;
+	text-decoration: underline $color-6 !important;
+}
