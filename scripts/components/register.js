@@ -4,6 +4,7 @@ import { toggleLinks } from "./handleUser.js";
 
 toggleLinks();
 
+//Register user and save user info to local storage
 document.querySelector("form").addEventListener("submit", async (event) => {
 	event.preventDefault();
 	const new_username = document.getElementById("new_username").value;

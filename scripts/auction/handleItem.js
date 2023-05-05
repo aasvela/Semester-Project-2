@@ -13,18 +13,19 @@ export async function createListing() {
 		document.querySelector("#select-country").value,
 		"whisky",
 	];
-	const endsAt = new Date(document.getElementById("auction-ends-input").value);
+
 	let productImage = [];
 	if (document.querySelector("#upload-product-image").value) {
 		productImage = [document.querySelector("#upload-product-image").value];
 	}
 	const media = productImage;
-
+	const endsAt = new Date(document.getElementById("auction-ends-input").value);
+	//Sets the value of the auction end input to two hours later and sets the min and max values
 	const now = new Date();
 	const twoHoursLater = new Date(now.getTime() + 4 * 60 * 60 * 1000); // Two hours later
 	const sevenDaysLater = new Date(now.getTime() + 7 * 24 * 60 * 60 * 1000); // Seven days later
-
 	const auctionEndInput = document.getElementById("auction-ends-input");
+
 	if (auctionEndInput) {
 		auctionEndInput.value = twoHoursLater.toISOString().substring(0, 16);
 		auctionEndInput.min = twoHoursLater.toISOString().substring(0, 16);

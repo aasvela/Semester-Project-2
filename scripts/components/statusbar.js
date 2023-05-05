@@ -6,7 +6,10 @@ const statusBarContainer = document.querySelector(".status-container");
 const statusBarUsername = document.querySelector(".user__name");
 const statusBarAvatar = document.querySelector(".user__avatar-img");
 const statusBarCredits = document.querySelector("#available-credits");
+const ongoingAuctionsCount = document.querySelector("#ongoing-auctions");
+const myAuctionsCount = document.querySelector("#list-my-auctions");
 
+//Shows status bar content if user is logged in
 export function statusBarContent() {
 	const user = JSON.parse(localStorage.getItem("user"));
 	if (user) {
@@ -23,11 +26,7 @@ export function statusBarContent() {
 	fetchAuctionCounts(user);
 }
 
-// Add these two lines at the beginning of the file
-const ongoingAuctionsCount = document.querySelector("#ongoing-auctions");
-const myAuctionsCount = document.querySelector("#list-my-auctions");
-
-// Add this new function
+//Update ongoing auctions count
 function updateAuctionsCount(ongoingCount, myCount) {
 	if (ongoingAuctionsCount) {
 		ongoingAuctionsCount.textContent = ongoingCount;
@@ -36,6 +35,8 @@ function updateAuctionsCount(ongoingCount, myCount) {
 		myAuctionsCount.textContent = myCount;
 	}
 }
+
+//Fetch auction counts
 async function fetchAuctionCounts(user) {
 	try {
 		const url = `${baseUrl}${routeWhiskyListings}`;

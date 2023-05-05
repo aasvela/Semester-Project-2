@@ -1,13 +1,15 @@
+//Clock component in the stats bar
 export function updateTime() {
 	const now = new Date();
 	const clock = document.getElementById("clock");
 	clock.innerHTML = now.toLocaleString();
 }
-
+//Initializes the clock
 export function initializeClock() {
 	updateTime();
 	setInterval(updateTime, 1000);
 }
+//Creates a countdown for the auction end time
 export function formatTimeRemaining(timeDifference) {
 	const hours = Math.floor(timeDifference / (1000 * 60 * 60));
 	const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
@@ -15,7 +17,7 @@ export function formatTimeRemaining(timeDifference) {
 
 	return `${hours}h ${minutes}m ${seconds}s`;
 }
-
+//Starts the countdown
 export function startCountdown(endTime, countdownElement) {
 	const updateCountdown = () => {
 		const now = new Date();

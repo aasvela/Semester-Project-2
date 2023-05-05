@@ -7,6 +7,7 @@ const userProfileAvatar = document.querySelector(".user-profile__avatar img");
 const userProfileCredits = document.querySelector("#available-credits");
 const infoBar = document.querySelector(".info-bar");
 
+//Toggle links depending on if user is logged in or not
 export function toggleLinks() {
 	if (user) {
 		document.querySelector(".register-link").style.display = "none";
@@ -16,6 +17,7 @@ export function toggleLinks() {
 	}
 }
 
+//Show user info in info bar
 export function showUserProfile() {
 	const userName = user.name;
 	const userEmail = user.email;
@@ -30,6 +32,7 @@ export function showUserProfile() {
 	}
 }
 
+//Logout user and remove user from local storage
 export function logout() {
 	logOutBtn.addEventListener("click", () => {
 		localStorage.removeItem("user");
@@ -37,6 +40,7 @@ export function logout() {
 	});
 }
 
+//Update user avatar
 async function updateAvatar(newAvatarUrl) {
 	try {
 		const response = await fetch(

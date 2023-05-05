@@ -4,6 +4,7 @@ import { toggleLinks } from "./handleUser.js";
 
 toggleLinks();
 
+//Login user and save user info to local storage
 document
 	.querySelector("#login-form")
 	.addEventListener("submit", async (event) => {
